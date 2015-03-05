@@ -4,11 +4,14 @@ compiler:
   - gcc
 
 before_script:
+  - wget -q http://www.cmake.org/files/v2.8/cmake-2.8.10.2-Linux-i386.tar.gz
+  - tar xzf cmake-2.8.10.2-Linux-i386.tar.gz > /dev/null
   - mkdir build
   - cd build
-  - cmake ..
+  - ../cmake-2.8.10.2-Linux-i386/cmake ..
 
 script: make jpeg
 
 notifications:
   hipchat: 821c76c562f83d7eb1d540538aebd3@fw4spl
+  slack: fw4spl:nlSbVVGfsHrVKxopLwGJrxMH
