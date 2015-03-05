@@ -8,7 +8,7 @@ before_script:
   - tar xzf cmake-2.8.10.2-Linux-i386.tar.gz > /dev/null
   - mkdir build
   - cd build
-  - ../cmake-2.8.10.2-Linux-i386/cmake ..
+  - ../cmake-2.8.10.2-Linux-i386/bin/cmake -DCMAKE_INSTALL_PREFIX:PATH=/tmp ..
 
 script: make jpeg
 
