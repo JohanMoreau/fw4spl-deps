@@ -9,3 +9,6 @@ before_script:
   - cmake ..
 
 script: make jpeg
+
+notifications:
+  hipchat: 821c76c562f83d7eb1d540538aebd3@fw4spl
