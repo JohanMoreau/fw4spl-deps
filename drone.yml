@@ -6,3 +6,9 @@ notify:
     on_started: false
     on_success: true
     on_failure: true
+  hipchat:
+    room: fw4spl
+    token: kZYWVyfCCeyrNyEYPLcDi2GkfZcQz62Rx5SdRTHC
+    on_started: false
+    on_success: true
+    on_failure: true
