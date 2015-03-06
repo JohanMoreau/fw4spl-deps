@@ -12,6 +12,12 @@ set(COMMON_CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_INSTALL_PREFIX}
 
 set(CROSS_COMPILING OFF CACHE BOOL "Cross compilation option")
 
+if(NOT ANDROID)
+    if(NOT APPLE)
+        option(ENABLE_NUMPY "Set to ON to build numpy library." OFF)
+    endif()
+endif()
+
 if(CROSS_COMPILING)
     if(NOT CMAKE_TOOLCHAIN_FILE)
         execute_process(COMMAND ${CMAKE_COMMAND} -P ${CMAKE_CURRENT_SOURCE_DIR}/cmake/android/clean_all.cmake)
@@ -73,7 +79,9 @@ if(NOT ANDROID)
 
     if(NOT APPLE)
         list(APPEND SUBDIRECTORIES curl)
-        list(APPEND SUBDIRECTORIES numpy)
+        if(ENABLE_NUMPY)
+            list(APPEND SUBDIRECTORIES numpy)
+        endif()
     endif()
 
     list(APPEND SUBDIRECTORIES qt)
