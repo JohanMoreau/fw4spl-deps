@@ -1,0 +1,8 @@
+notify:
+  slack:
+    webhook_url: 'https://hooks.slack.com/services/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'
+    username: 'drone'
+    channel: '#fw4spl'
+    on_started: false
+    on_success: true
+    on_failure: true
